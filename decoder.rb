@@ -19,7 +19,19 @@ def decode_word(word)
   decod_word
 end
 
+def decode(string)
+  decod_string = ""
+  string = string.split("  ")
+  string.each do |word|
+    decod_string += decode_word(word) + " "
+  end
+  decod_string
+end
+
 print decode_char('.--')
 puts
 print decode_word('-- -.--')
+
+print decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
+puts
 
