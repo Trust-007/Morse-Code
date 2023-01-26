@@ -22,8 +22,12 @@ end
 def decode(string)
   decod_string = ""
   string = string.split("  ")
-  string.each do |word|
-    decod_string += decode_word(word) + " "
+  string.each_with_index do |word, index|
+    if(index == string.length-1)
+      decod_string += decode_word(word) 
+    else
+      decod_string += decode_word(word) + " "  
+    end    
   end
   decod_string
 end
